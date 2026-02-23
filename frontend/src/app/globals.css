@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-obsidian: #0D0D0F;
+  --color-imperial-deep: #1A0A2E;
+  --color-blood-jade: #8B0000;
+  --color-imperial-gold: #C9A84C;
+  --color-jade-green: #2E7D6A;
+  --color-silver-mist: #E8E0D0;
+  --color-ancient-ash: #6B6560;
+
+  --background: var(--color-obsidian);
+  --foreground: var(--color-silver-mist);
+}
+
+:root {
+  --background: #0D0D0F;
+  --foreground: #E8E0D0;
+  
+  /* Gradients */
+  --grad-scroll: linear-gradient(135deg, #1A0A2E 0%, #0D0D0F 60%, #2A0A0A 100%);
+  --grad-gold: linear-gradient(90deg, transparent, #C9A84C, transparent);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Noto Serif SC', serif;
+}
+
+/* Custom Utilities based on Guidelines */
+@layer utilities {
+  .card-wuxia {
+    @apply bg-imperial-deep border border-imperial-gold/30 p-6 relative;
+    background: var(--grad-scroll);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.1);
+  }
+
+  .btn-wuxia-primary {
+    @apply bg-blood-jade border border-imperial-gold text-silver-mist px-7 py-2.5 transition-all duration-300;
+    letter-spacing: 0.1em;
+  }
+
+  .btn-wuxia-primary:hover {
+    @apply bg-red-700;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
+  }
+
+  .divider-wuxia {
+    @apply h-px border-none my-4;
+    background: linear-gradient(90deg, transparent, #C9A84C, #8B0000, #C9A84C, transparent);
+  }
+}
